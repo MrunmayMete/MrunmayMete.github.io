@@ -44,6 +44,13 @@ header {
   align-items: center;
   justify-content: center;
 }
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
 
 .photo-placeholder {
   width: 150px;
