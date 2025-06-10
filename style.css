@@ -1,0 +1,93 @@
+/* style.css */
+:root {
+  color-scheme: light dark;
+  --bg-light: #f9f9f9;
+  --bg-dark: #121212;
+  --text-light: #111;
+  --text-dark: #eee;
+  --accent: #005f73;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background 0.3s, color 0.3s;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+  }
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  background: var(--accent);
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.intro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-placeholder {
+  width: 150px;
+  height: 150px;
+  background: #ccc;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 150px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+nav {
+  background: #ddd;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #222;
+  font-weight: bold;
+}
+
+main section {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.3rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background: #eee;
+}
