@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>📊 Statistics Learning Games</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+    h1 { margin-bottom: 10px; }
+    #menu { margin: 20px; }
+    #menu button {
+      margin: 5px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 1px solid #444;
+      background: #f0f0f0;
+      font-size: 16px;
+    }
+    #menu button:hover {
+      background: #ddd;
+    }
+    .game {
+      display: none;
+      margin-top: 20px;
+    }
+    #plot, #chart {
+      width: 80%;
+      height: 500px;
+      margin: auto;
+    }
+    #feedback, #feedback-mean {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>📊 Interactive Statistics Games</h1>
+<p>Select a game to play:</p>
+
+<div id="menu">
+  <button onclick="showGame('covariance')">Covariance Game</button>
+  <button onclick="showGame('mean')">Guess the Mean Game</button>
+</div>
+
+<!-- Covariance Game -->
+<div id="covariance" class="game">
+  <h2>📈 Covariance Game: Pick the Best Fit Line</h2>
+  <p>Look at the scatterplot. Which line best describes the relationship?</p>
+  <div id="plot"></div>
+  <div>
+    <button onclick="checkAnswer('positive')">Line A (Positive slope)</button>
+    <button onclick="checkAnswer('negative')">Line B (Negative slope)</button>
+    <button onclick="checkAnswer('flat')">Line C (Flat line)</button>
+  </div>
+  <p id="feedback"></p>
+</div>
+
+<!-- Guess the Mean Game -->
+<div id="mean" class="game">
+  <h2>🎯 Guess the Mean Game</h2>
+  <p id="instructions">Click anywhere on the chart’s <b>y-axis area</b> to guess the mean of the bars!</p>
+  <div id="chart"></div>
+  <p id="feedback-mean"></p>
+</div>
+
+<script>
+  // === Tab Switching ===
+  function showGame(gameId) {
+    document.querySelectorAll('.game').forEach(g => g.style.display = 'none');
+    document.getElementById(gameId).style.display = 'block';
+  }
+
+  // Default: Show covariance game first
+  showGame('covariance');
+
+  // === Covariance Game Logic ===
+  let x = [1, 2, 3, 4, 5, 6, 7, 8];
+  let y = [2, 3, 4, 6, 7, 8, 9, 11];
+
+  let scatter = {
+    x: x, y: y, mode: 'markers', type: 'scatter',
+    name: 'Data Points', marker: { size: 10 }
+  };
+
+  let linePositive = { x: [1, 8], y: [1.5, 12], mode: 'lines',
+    name: 'Line A', line: { dash: 'dot', color: 'green' } };
+
+  let lineNegative = { x: [1, 8], y: [12, 1.5], mode: 'lines',
+    name: 'Line B', line: { dash: 'dot', color: 'red' } };
+
+  let lineFlat = { x: [1, 8], y: [6, 6], mode: 'lines',
+    name: 'Line C', line: { dash: 'dot', color: 'blue' } };
+
+  let layout1 = {
+    title: 'Scatterplot with Candidate Lines',
+    xaxis: { title: 'X Values' },
+    yaxis: { title: 'Y Values' }
+  };
+
+  Plotly.newPlot("plot", [scatter, linePositive, lineNegative, lineFlat], layout1);
+
+  let correctAnswer = "positive";
+
+  function checkAnswer(choice) {
+    let feedback = document.getElementById("feedback");
+    if (choice === correctAnswer) {
+      feedback.innerHTML = "✅ Correct! The data increases as X increases, so the covariance is positive.<br><br>" +
+        "👉 Explanation: When X increases, Y also increases. The line with positive slope best generalizes this trend.";
+    } else {
+      feedback.innerHTML = "❌ Not quite. Try again!<br><br>" +
+        "Hint: Look at how the Y values change as X increases.";
+    }
+  }
+
+  // === Guess the Mean Game Logic ===
+  const categories = ["A", "B", "C", "D", "E"];
+  const values = [30, 50, 70, 20, 90];
+  const actualMean = values.reduce((a,b) => a+b, 0) / values.length;
+
+  Plotly.newPlot('chart', [{
+    x: categories,
+    y: values,
+    type: 'bar',
+    marker: {color: 'skyblue'}
+  }], {
+    yaxis: {range: [0, 100]},
+    title: "Click on the chart to guess the mean"
+  });
+
+  const chartDiv = document.getElementById('chart');
+
+  chartDiv.addEventListener('click', function(evt) {
+    const rect = chartDiv.getBoundingClientRect();
+    const chartHeight = rect.height;
+    const yPixel = evt.clientY - rect.top;
+    const userGuess = 100 - (yPixel / chartHeight) * 100;
+
+    let feedback = "";
+    if (Math.abs(userGuess - actualMean) < 5) {
+      feedback = `✅ Correct! The mean is ${actualMean.toFixed(2)}`;
+    } else if (userGuess > actualMean) {
+      feedback = `❌ Too high! The mean is ${actualMean.toFixed(2)}`;
+    } else {
+      feedback = `❌ Too low! The mean is ${actualMean.toFixed(2)}`;
+    }
+    document.getElementById("feedback-mean").innerText = feedback;
+  });
+</script>
+
+</body>
+</html>
