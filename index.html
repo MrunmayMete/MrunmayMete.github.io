@@ -1,139 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mrunmay Mete | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .intro {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      align-items: center;
-      justify-content: center;
-    }
-    .intro-columns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    .intro-contact {
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    .profile-photo {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2px solid #ccc;
-    }
-    .main-columns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-    @media (max-width: 800px) {
-      .intro-columns, .main-columns {
-        grid-template-columns: 1fr;
-      }
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mrunmay Mete | Portfolio</title>
+    <style>
+        /* --- Global Styles & Typography --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFFBF5; /* Warm off-white background from reference */
+            color: #4A4A4A; /* Dark charcoal text for readability */
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        main, footer {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            color: #333;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #F06253; /* Coral accent color */
+            border-bottom: 2px solid #FDE2DE;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        a {
+            color: #F06253;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #FDE2DE; /* Lighter shade of coral */
+            margin: 50px 0;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        
+        /* --- Custom Link Color --- */
+        .link-dark {
+            color: #4A4A4A; /* Dark charcoal color */
+        }
+         .link-dark:hover {
+            color: #F06253;
+        }
+
+
+        /* --- Hero Section --- */
+        #home {
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #FDE2DE; /* Light coral border */
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        #home h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        #home p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        #home nav a {
+            margin: 0 15px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        /* --- Skills Section --- */
+        #skills table {
+            border-spacing: 0;
+            margin-top: 20px;
+        }
+        
+        #skills td {
+             padding: 0 15px 30px 0;
+        }
+
+        #skills h4 {
+            color: #F06253;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        /* --- Project Link Button --- */
+        .project-link-btn {
+            display: inline-block;
+            background-color: #F06253;
+            color: #FFF;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 10px;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-link-btn:hover {
+            background-color: #d85447;
+            text-decoration: none;
+            color: #FFF;
+        }
+
+        /* --- Journey (Timeline) Section --- */
+        #journey > div {
+            border-left: 3px solid #F06253;
+            padding-left: 25px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        #journey > div::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background-color: #F06253;
+            border-radius: 50%;
+            position: absolute;
+            left: -7.5px;
+            top: 5px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer .say-hello-btn {
+            display: inline-block;
+            background-color: #F06253;
+            color: #FFF;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 20px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        footer .say-hello-btn:hover {
+            background-color: #d85447;
+            text-decoration: none;
+        }
+
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="intro">
-        <img src="photo.png" alt="Mrunmay's Photo" class="profile-photo">
-        <div class="intro-columns">
-          <div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home">
+            <!-- Add link to your profile photo image file here -->
+            <a href="#" target="_blank" rel="noopener noreferrer">
+                <img src="https://placehold.co/150x150/FDE2DE/F06253?text=MM" alt="Mrunmay Mete" class="profile-photo">
+            </a>
             <h1>Mrunmay Mete</h1>
-            <p>Curious and analytical AI graduate, passionate about robotics and scientific research through machine learning.</p>
-          </div>
-          <div class="intro-contact">
-            <p><strong>Email:</strong> <a href="mailto:mrunmaymete@gmail.com">mrunmaymete@gmail.com</a><br>
-               <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mrunmay-mete" target="_blank">linkedin.com/in/mrunmay-mete</a><br>
-               <strong>Phone:</strong> 9403350095</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+            <p>Passionate about robotics and scientific research through machine learning.</p>
+            <nav>
+                <a href="#about">About</a> |
+                <a href="#skills">Skills</a> |
+                <a href="#projects">Projects</a> |
+                <a href="#journey">Journey</a> |
+                <a href="#contact">Contact</a>
+            </nav>
+        </section>
 
-  <main class="container">
-    <div class="main-columns">
-      <div>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                A curious and analytical AI graduate with a deep-seated passion for robotics and applying scientific research principles through machine learning.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- Skills Section -->
         <section id="skills">
-          <h2>Skills</h2>
-          <p><strong>Programming:</strong> Python, R</p>
-          <p><strong>Database:</strong> SQL, NoSQL</p>
-          <p><strong>Cloud:</strong> AWS</p>
+            <h2>Core Skills</h2>
+            <table width="100%">
+                <tr>
+                    <td valign="top" width="33%">
+                        <h4>Programming Languages</h4>
+                        <ul>
+                            <li>Python</li>
+                            <li>R</li>
+                        </ul>
+
+                        <h4>Databases</h4>
+                        <ul>
+                            <li>SQL</li>
+                        </ul>
+                        
+                        <h4>Artificial Intelligence & Machine Learning</h4>
+                        <ul>
+                            <li>PyTorch</li>
+                            <li>GANs</li>
+                            <li>NLP</li>
+                        </ul>
+                    </td>
+                    <td valign="top" width="33%">
+                        <h4>Data Analytics & Visualization</h4>
+                        <ul>
+                            <li>Tableau</li>
+                            <li>Prompt Engineering</li>
+                        </ul>
+                        
+                        <h4>Cloud & DevOps</h4>
+                        <ul>
+                            <li>Vercel</li>
+                            <li>GitHub</li>
+                        </ul>
+                        
+                        <h4>Hardware & Robotics</h4>
+                        <ul>
+                            <li>Arduino</li>
+                            <li>3D Printing</li>
+                            <li>Pictoblox</li>
+                            <li>Prototyping</li>
+                        </ul>
+                    </td>
+                     <td valign="top" width="33%">
+                        <h4>Development Tools</h4>
+                        <ul>
+                            <li>VS Code</li>
+                            <li>RStudio</li>
+                            <li>Google Colab</li>
+                        </ul>
+
+                        <h4>Design Tools</h4>
+                        <ul>
+                            <li>Draw.io</li>
+                            <li>Clipchamp</li>
+                            <li>OBS Studio</li>
+                            <li>Figma</li>
+                            <li>Miro</li>
+                            <li>VEO3</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
         </section>
 
-        <section id="internship">
-          <h2>Internship</h2>
-          <p><strong>IndiaFIRST ROBOTICS, Pune</strong> — Robotics and AI Intern (June-Dec 2023)</p>
-          <ul>
-            <li>Designed Robotic Dog and Arm using Arduino and 3D-printed parts</li>
-            <li>Planned AI integration for Humanoid Robot</li>
-            <li>Contributed to prototypes, delivered STEM workshops</li>
-          </ul>
-        </section>
+        <hr>
 
-        <section id="publication">
-          <h2>Publication</h2>
-          <p><a href="https://ijarsct.co.in/Paper18557.pdf" target="_blank">GANs in Medical Imaging: Synthesizing Realistic Images for Analysis</a></p>
-        </section>
-
-        <section id="certifications">
-          <h2>Certifications</h2>
-          <ul>
-            <li>Machine Learning — NPTEL (Apr 2025)</li>
-            <li>Roboticist — IndiaFIRST Robotics (Dec 2023)</li>
-            <li>Entrepreneurship — NPTEL (Oct 2023)</li>
-          </ul>
-        </section>
-      </div>
-
-      <div>
-        <section id="education">
-          <h2>Education</h2>
-          <ul>
-            <li><strong>IIT Bombay</strong> — M.Tech in Education Technology (2025-2027)</li>
-            <li><strong>GHR Institute of Engg. & Tech</strong> — B.Tech in AI (2021-2024, CGPA: 7.6)</li>
-          </ul>
-        </section>
-
+        <!-- Projects Section -->
         <section id="projects">
-          <h2>Projects</h2>
-          <p><strong>GANs in Medical Imaging</strong> — DCGAN using PyTorch to synthesize brain MRI images</p>
-          <p><strong>National Anthems Clustering</strong> — K-Means + NLP + Word2Vec for clustering anthems by sentiment</p>
+            <h2>Featured Projects</h2>
+            <div>
+                <h3>Robotic Dog</h3>
+                <p>A quadruped robot designed and built from scratch using Arduino and custom 3D-printed components during my internship.</p>
+                <!-- Add link to your GitHub repository for this project here -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
+            </div>
+            <br>
+             <div>
+                <h3>Robotic Arm</h3>
+                <p>A functional robotic arm developed with Arduino for precise movements, featuring 3D-printed parts for a lightweight structure.</p>
+                <!-- Add link to your GitHub repository for this project here -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
+            </div>
+            <br>
+            <div>
+                <h3>National Anthems Clustering</h3>
+                <p>Utilized K-Means clustering with NLP and Word2Vec to group national anthems based on thematic and sentimental similarities.</p>
+                <!-- Add link to your GitHub repository for this project here -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
+            </div>
         </section>
 
-        <section id="volunteering">
-          <h2>Volunteering</h2>
-          <ul>
-            <li><strong>STEM Educator</strong> — Conducted robotics workshops (Oct-Nov 2022)</li>
-            <li><strong>Sabr Foundation</strong> — Research, writing, community service (Oct-Nov 2022)</li>
-          </ul>
+        <hr>
+        
+        <!-- Journey Section -->
+        <section id="journey">
+            <h2>My Journey</h2>
+            <div>
+                <p><b>2025 - 2027</b></p>
+                <h3>M.Tech in Education Technology</h3>
+                <p><i>Centre for Educational Technology, IIT Bombay</i></p>
+                <p>Exploring the intersection of technology and learning methodologies to create innovative educational tools.</p>
+            </div>
+            <div>
+                <p><b>June 2023 - Dec 2023</b></p>
+                <h3>Robotics and AI Intern</h3>
+                <p><i>IndiaFIRST ROBOTICS, Pune</i></p>
+                <p>Gained hands-on experience in robotics hardware and AI integration, from design to execution and educational outreach.</p>
+                <ul>
+                    <li>Designed Robotic Dog and Arm using Arduino and 3D-printed parts.</li>
+                    <li>Planned AI integration strategies for a Humanoid Robot.</li>
+                    <li>Contributed to prototypes and delivered engaging STEM robotics workshops.</li>
+                </ul>
+            </div>
+            <div>
+                <p><b>2021 - 2024</b></p>
+                <h3>B.Tech in Artificial Intelligence</h3>
+                <p><i>G H Raisoni Institute of Engineering and Technology, Nagpur (CGPA: 7.6)</i></p>
+                <p>Built a strong foundation in core AI concepts, machine learning algorithms, and practical software development.</p>
+            </div>
+            <div>
+                <p><b>Oct 2022 - Nov 2022</b></p>
+                <h3>Community Volunteering</h3>
+                <p><i>Sabr Foundation</i></p>
+                <p>Contributed to social causes through research, content writing, and direct community service.</p>
+            </div>
         </section>
 
-        <section id="contact">
-          <h2>Contact</h2>
-          <p><strong>Email:</strong> <a href="mailto:mrunmaymete@gmail.com">mrunmaymete@gmail.com</a></p>
-          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mrunmay-mete" target="_blank">linkedin.com/in/mrunmay-mete</a></p>
-          <p><strong>Phone:</strong> 9403350095</p>
-        </section>
-      </div>
-    </div>
-  </main>
+        <hr>
 
-  <footer>
-    <p>&copy; 2025 Mrunmay Mete. All rights reserved.</p>
-  </footer>
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2>Publications</h2>
+            <!-- Add link to your publication PDF or webpage here -->
+            <p><a href="#" target="_blank" rel="noopener noreferrer" class="link-dark">GANs in Medical Imaging: Synthesizing Realistic Images for Analysis</a></p>
+        </section>
+        
+        <hr>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <!-- Add link to your Machine Learning certificate here -->
+                <li><a href="#" target="_blank" rel="noopener noreferrer" class="link-dark">Machine Learning - NPTEL (Apr 2025)</a></li>
+                <!-- Add link to your Roboticist certificate here -->
+                <li><a href="#" target="_blank" rel="noopener noreferrer" class="link-dark">Roboticist - IndiaFIRST Robotics (Dec 2023)</a></li>
+                <!-- Add link to your Entrepreneurship certificate here -->
+                <li><a href="#" target="_blank" rel="noopener noreferrer" class="link-dark">Entrepreneurship - NPTEL (Oct 2023)</a></li>
+            </ul>
+        </section>
+
+    </main>
+    
+    <footer id="contact">
+        <h2>Get In Touch</h2>
+        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of an innovative team. Feel free to reach out.</p>
+        <a href="mailto:mrunmaymete@gmail.com" class="say-hello-btn">Say Hello</a>
+        
+        <br><br>
+        
+        <a href="mailto:mrunmaymete@gmail.com">Email</a> |
+        <a href="https://linkedin.com/in/mrunmay-mete" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        
+        <br><br>
+        
+        <p>&copy; 2025 Mrunmay Mete. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
+
