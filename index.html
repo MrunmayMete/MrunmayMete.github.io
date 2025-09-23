@@ -116,6 +116,33 @@
             margin-bottom: 10px;
         }
 
+        /* --- Projects Section --- */
+        .project-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .project-description {
+            flex: 1;
+            padding-right: 30px;
+        }
+
+        .project-image img {
+            width: 160px;
+            height: 110px;
+            border-radius: 8px;
+            border: 3px solid #FDE2DE;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-image img:hover {
+            transform: scale(1.05);
+        }
+
+
         /* --- Project Link Button --- */
         .project-link-btn {
             display: inline-block;
@@ -185,7 +212,7 @@
         <section id="home">
             <!-- Add link to your profile photo image file here -->
             <a href="#" target="_blank" rel="noopener noreferrer">
-                <img src="https://github.com/MrunmayMete/MrunmayMete.github.io/blob/main/photo.jpg" alt="Mrunmay Mete" class="profile-photo">
+                <img src="https://placehold.co/150x150/FDE2DE/F06253?text=MM" alt="Mrunmay Mete" class="profile-photo">
             </a>
             <h1>Mrunmay Mete</h1>
             <p>Passionate about robotics and scientific research through machine learning.</p>
@@ -280,25 +307,41 @@
         <!-- Projects Section -->
         <section id="projects">
             <h2>Featured Projects</h2>
-            <div>
-                <h3>Robotic Dog</h3>
-                <p>A quadruped robot designed and built from scratch using Arduino and custom 3D-printed components during my internship.</p>
-                <!-- Add link to your GitHub repository for this project here -->
-                <a href="#" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
+            <div class="project-item">
+                <div class="project-description">
+                    <h3>Robotic Dog</h3>
+                    <p>A quadruped robot designed and built from scratch using Arduino and custom 3D-printed components during my internship.</p>
+                    <!-- Add link to your GitHub repository for this project here -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
+                </div>
+                <div class="project-image">
+                     <!-- Add link to your Robotic Dog image here -->
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="https://placehold.co/160x110/FDE2DE/F06253?text=RoboDog" alt="Robotic Dog">
+                    </a>
+                </div>
             </div>
-            <br>
-             <div>
-                <h3>Robotic Arm</h3>
-                <p>A functional robotic arm developed with Arduino for precise movements, featuring 3D-printed parts for a lightweight structure.</p>
-                <!-- Add link to your GitHub repository for this project here -->
-                <a href="#" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
+             <div class="project-item">
+                <div class="project-description">
+                    <h3>Robotic Arm</h3>
+                    <p>A functional robotic arm developed with Arduino for precise movements, featuring 3D-printed parts for a lightweight structure.</p>
+                    <!-- Add link to your GitHub repository for this project here -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
+                </div>
+                <div class="project-image">
+                    <!-- Add link to your Robotic Arm image here -->
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="https://placehold.co/160x110/FDE2DE/F06253?text=RoboArm" alt="Robotic Arm">
+                    </a>
+                </div>
             </div>
-            <br>
-            <div>
-                <h3>National Anthems Clustering</h3>
-                <p>Utilized K-Means clustering with NLP and Word2Vec to group national anthems based on thematic and sentimental similarities.</p>
-                <!-- Add link to your GitHub repository for this project here -->
-                <a href="#" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
+            <div class="project-item">
+                <div class="project-description">
+                    <h3>National Anthems Clustering</h3>
+                    <p>Utilized K-Means clustering with NLP and Word2Vec to group national anthems based on thematic and sentimental similarities.</p>
+                    <!-- Add link to your GitHub repository for this project here -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
+                </div>
             </div>
         </section>
 
@@ -381,4 +424,5 @@
 
 </body>
 </html>
+
 
