@@ -74,8 +74,8 @@
         }
         
         .profile-photo {
-            width: 150px;
-            height: 150px;
+            width: 254px;
+            height: 254px;
             border-radius: 50%;
             border: 5px solid #FDE2DE; /* Light coral border */
             margin-bottom: 20px;
@@ -202,6 +202,18 @@
             background-color: #d85447;
             text-decoration: none;
         }
+        
+        /* --- Fade-in Animation on Scroll --- */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
     </style>
 </head>
@@ -211,8 +223,8 @@
         <!-- Hero Section -->
         <section id="home">
             <!-- Add link to your profile photo image file here -->
-            <a href="#" target="_blank" rel="noopener noreferrer">
-                <img src="https://placehold.co/150x150/FDE2DE/F06253?text=MM" alt="Mrunmay Mete" class="profile-photo">
+            <a href="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/photo.jpg" target="_blank" rel="noopener noreferrer">
+                <img src="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/photo.jpg" alt="Mrunmay Mete" class="profile-photo">
             </a>
             <h1>Mrunmay Mete</h1>
             <p>Passionate about robotics and scientific research through machine learning.</p>
@@ -226,17 +238,17 @@
         </section>
 
         <!-- About Section -->
-        <section id="about">
+        <section id="about" class="fade-in-section">
             <h2>About Me</h2>
             <p>
                 A curious and analytical AI graduate with a deep-seated passion for robotics and applying scientific research principles through machine learning.
             </p>
         </section>
 
-        <hr>
+        <hr class="fade-in-section">
 
         <!-- Skills Section -->
-        <section id="skills">
+        <section id="skills" class="fade-in-section">
             <h2>Core Skills</h2>
             <table width="100%">
                 <tr>
@@ -302,22 +314,22 @@
             </table>
         </section>
 
-        <hr>
+        <hr class="fade-in-section">
 
         <!-- Projects Section -->
-        <section id="projects">
+        <section id="projects" class="fade-in-section">
             <h2>Featured Projects</h2>
             <div class="project-item">
                 <div class="project-description">
                     <h3>Robotic Dog</h3>
                     <p>A quadruped robot designed and built from scratch using Arduino and custom 3D-printed components during my internship.</p>
                     <!-- Add link to your GitHub repository for this project here -->
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
+                    <a href="https://github.com/MrunmayMete/Mini_Dhabba" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
                 </div>
                 <div class="project-image">
                      <!-- Add link to your Robotic Dog image here -->
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                        <img src="https://placehold.co/160x110/FDE2DE/F06253?text=RoboDog" alt="Robotic Dog">
+                    <a href="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/robotic_dog.jpg" target="_blank" rel="noopener noreferrer">
+                        <img src="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/robotic_dog.jpg" alt="Robotic Dog">
                     </a>
                 </div>
             </div>
@@ -326,12 +338,12 @@
                     <h3>Robotic Arm</h3>
                     <p>A functional robotic arm developed with Arduino for precise movements, featuring 3D-printed parts for a lightweight structure.</p>
                     <!-- Add link to your GitHub repository for this project here -->
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
+                    <a href="https://github.com/MrunmayMete/Robotic-Arm" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
                 </div>
                 <div class="project-image">
                     <!-- Add link to your Robotic Arm image here -->
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                        <img src="https://placehold.co/160x110/FDE2DE/F06253?text=RoboArm" alt="Robotic Arm">
+                    <a href="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/robotic_arm.jpg" target="_blank" rel="noopener noreferrer">
+                        <img src="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/robotic_arm.jpg" alt="Robotic Arm">
                     </a>
                 </div>
             </div>
@@ -340,15 +352,15 @@
                     <h3>National Anthems Clustering</h3>
                     <p>Utilized K-Means clustering with NLP and Word2Vec to group national anthems based on thematic and sentimental similarities.</p>
                     <!-- Add link to your GitHub repository for this project here -->
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
+                    <a href="https://github.com/MrunmayMete/anthem-clustering-using-NLP-and-K-Means-Clustring" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
                 </div>
             </div>
         </section>
 
-        <hr>
+        <hr class="fade-in-section">
         
         <!-- Journey Section -->
-        <section id="journey">
+        <section id="journey" class="fade-in-section">
             <h2>My Journey</h2>
             <div>
                 <p><b>2025 - 2027</b></p>
@@ -381,19 +393,19 @@
             </div>
         </section>
 
-        <hr>
+        <hr class="fade-in-section">
 
         <!-- Publications Section -->
-        <section id="publications">
+        <section id="publications" class="fade-in-section">
             <h2>Publications</h2>
             <!-- Add link to your publication PDF or webpage here -->
             <p><a href="#" target="_blank" rel="noopener noreferrer" class="link-dark">GANs in Medical Imaging: Synthesizing Realistic Images for Analysis</a></p>
         </section>
         
-        <hr>
+        <hr class="fade-in-section">
 
         <!-- Certifications Section -->
-        <section id="certifications">
+        <section id="certifications" class="fade-in-section">
             <h2>Certifications</h2>
             <ul>
                 <!-- Add link to your Machine Learning certificate here -->
@@ -407,7 +419,7 @@
 
     </main>
     
-    <footer id="contact">
+    <footer id="contact" class="fade-in-section">
         <h2>Get In Touch</h2>
         <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of an innovative team. Feel free to reach out.</p>
         <a href="mailto:mrunmaymete@gmail.com" class="say-hello-btn">Say Hello</a>
@@ -421,6 +433,26 @@
         
         <p>&copy; 2025 Mrunmay Mete. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Stop observing once it's visible
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            const sections = document.querySelectorAll('.fade-in-section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 
 </body>
 </html>
