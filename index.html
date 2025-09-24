@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Mrunmay Mete, an AI graduate passionate about robotics, machine learning, and educational technology.">
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/photo.jpg">
     <title>Mrunmay Mete | Portfolio</title>
     <style>
         /* --- Global Styles & Typography --- */
@@ -118,59 +116,27 @@
         }
 
         /* --- Projects Section --- */
-.project-item {
-    display: flex;
-    align-items: center;
-    gap: 30px; /* Adds space between image and text */
-    margin-bottom: 40px;
-    flex-direction: row-reverse; /* NEW: Puts image on the right */
-}
+        .project-item {
+            margin-bottom: 20px;
+        }
 
-.project-description {
-    flex: 1;
-    padding-left: 30px; /* MODIFIED: Changed from padding-right */
-    padding-right: 0; /* NEW: Ensure no right padding */
-}
+        .project-description {
+            flex: 1;
+            padding-right: 30px;
+        }
 
-.project-image img {
-    width: 160px;
-    height: 110px;
-    border-radius: 8px;
-    border: 3px solid #FDE2DE;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.project-image img:hover {
-    transform: scale(1.05);
-}
-
-/* --- Responsive Design for Mobile --- */
-@media (max-width: 768px) {
-    #home h1 {
-        font-size: 2.5em;
-    }
-    #home nav a {
-        margin: 0 8px;
-    }
-
-    #skills table, #skills tr, #skills td {
-        display: block;
-        width: 100%;
-    }
-    #skills td {
-        padding: 0 0 30px 0;
-    }
-
-    .project-item {
-        flex-direction: column; /* MODIFIED: Stacks image above description for mobile */
-        align-items: flex-start;
-        gap: 15px;
-    }
-    .project-description { /* NEW: Remove left padding for mobile */
-        padding-left: 0;
-    }
-}
+        .project-image img {
+            width: 160px;
+            height: 110px;
+            border-radius: 8px;
+            border: 3px solid #FDE2DE;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-image img:hover {
+            transform: scale(1.05);
+        }
 
         /* --- Project Link Button --- */
         .project-link-btn {
@@ -244,35 +210,14 @@
             transform: translateY(0);
         }
 
-        /* --- Responsive Design for Mobile --- */
-        @media (max-width: 768px) {
-            #home h1 {
-                font-size: 2.5em;
-            }
-            #home nav a {
-                margin: 0 8px;
-            }
-
-            #skills table, #skills tr, #skills td {
-                display: block;
-                width: 100%;
-            }
-            #skills td {
-                padding: 0 0 30px 0;
-            }
-
-            .project-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
-            }
-        }
     </style>
 </head>
 <body>
 
     <main>
+        <!-- Hero Section -->
         <section id="home">
+            <!-- Add link to your profile photo image file here -->
             <a href="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/photo.jpg" target="_blank" rel="noopener noreferrer">
                 <img src="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/photo.jpg" alt="Mrunmay Mete" class="profile-photo">
             </a>
@@ -289,6 +234,7 @@
             </nav>
         </section>
 
+        <!-- About Section -->
         <section id="about" class="fade-in-section">
             <h2>About Me</h2>
             <p>
@@ -298,6 +244,7 @@
 
         <hr class="fade-in-section">
 
+        <!-- Skills Section -->
         <section id="skills" class="fade-in-section">
             <h2>Core Skills</h2>
             <table width="100%">
@@ -366,60 +313,46 @@
 
         <hr class="fade-in-section">
 
+        <!-- Projects Section -->
         <section id="projects" class="fade-in-section">
             <h2>Featured Projects</h2>
             <div class="project-item">
-                <div class="project-image">
-                    <a href="https://github.com/MrunmayMete/Mini_Dhabba" target="_blank" rel="noopener noreferrer">
-                        <img src="https://github.com/MrunmayMete/MrunmayMete.github.io/blob/main/robotic_dog.jpg" alt="Robotic Dog Project">
-                    </a>
-                </div>
                 <div class="project-description">
                     <h3>Robotic Dog</h3>
                     <p>A quadruped robot designed and built from scratch using Arduino and custom 3D-printed components during my internship.</p>
+                    <!-- Add link to your GitHub repository for this project here -->
                     <a href="https://github.com/MrunmayMete/Mini_Dhabba" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
                 </div>
             </div>
              <div class="project-item">
-                <div class="project-image">
-                    <a href="https://github.com/MrunmayMete/Robotic-Arm" target="_blank" rel="noopener noreferrer">
-                        <img src="https://github.com/MrunmayMete/MrunmayMete.github.io/blob/main/robotic_arm.jpg" alt="Robotic Arm Project">
-                    </a>
-                </div>
                 <div class="project-description">
                     <h3>Robotic Arm</h3>
                     <p>A functional robotic arm developed with Arduino for precise movements, featuring 3D-printed parts for a lightweight structure.</p>
+                    <!-- Add link to your GitHub repository for this project here -->
                     <a href="https://github.com/MrunmayMete/Robotic-Arm" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
                 </div>
             </div>
             <div class="project-item">
-                <div class="project-image">
-                    <a href="https://github.com/MrunmayMete/anthem-clustering-using-NLP-and-K-Means-Clustring" target="_blank" rel="noopener noreferrer">
-                        <img src="https://via.placeholder.com/160x110.png/F06253/FFF?text=NLP" alt="National Anthems Clustering Project">
-                    </a>
-                </div>
                 <div class="project-description">
                     <h3>National Anthems Clustering</h3>
                     <p>Utilized K-Means clustering with NLP and Word2Vec to group national anthems based on thematic and sentimental similarities.</p>
+                    <!-- Add link to your GitHub repository for this project here -->
                     <a href="https://github.com/MrunmayMete/anthem-clustering-using-NLP-and-K-Means-Clustring" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
                 </div>
             </div>
             <div class="project-item">
-                 <div class="project-image">
-                    <a href="https://github.com/MrunmayMete" target="_blank" rel="noopener noreferrer">
-                        <img src="https://via.placeholder.com/160x110.png/F06253/FFF?text=EdTech" alt="Morning_Owls Micro-Learning Engine Project">
-                    </a>
-                </div>
                 <div class="project-description">
                     <h3>Morning_Owls - Personalized Micro-Learning Engine</h3>
                     <p>Welcome to Morning_Owls, a full-stack MVP web app for personalized micro-learning, designed for vocational and upskilling learners. This project is built with Next.js, Firebase, and Tailwind CSS, featuring a GenAI-powered recommendation engine.</p>
-                    <a href="https://github.com/MrunmayMete" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
+                    <!-- Add link to your GitHub repository for this project here -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
                 </div>
             </div>
         </section>
 
         <hr class="fade-in-section">
         
+        <!-- Journey Section -->
         <section id="journey" class="fade-in-section">
             <h2>My Journey</h2>
             <div>
@@ -455,8 +388,10 @@
 
         <hr class="fade-in-section">
 
+        <!-- Publications Section -->
         <section id="publications" class="fade-in-section">
             <h2>Publications</h2>
+            <!-- Add link to your publication PDF or webpage here -->
             <p><a href="https://drive.google.com/file/d/1j1062_wMCdHm-T7hFXNhsoIN-Z_bDfx8/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="link-dark">GANs in Medical Imaging: Synthesizing Realistic Images for Analysis</a></p>
 
         </section>
