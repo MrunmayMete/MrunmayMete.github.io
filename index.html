@@ -10,8 +10,8 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #FFFBF5; /* Warm off-white background from reference */
-            color: #4A4A4A; /* Dark charcoal text for readability */
+            background-color: #FFFBF5; /* Warm off-white background */
+            color: #4A4A4A;
             margin: 0;
             padding: 0;
             line-height: 1.7;
@@ -30,7 +30,7 @@
 
         h2 {
             font-size: 2em;
-            color: #F06253; /* Coral accent color */
+            color: #F06253; /* Coral accent */
             border-bottom: 2px solid #FDE2DE;
             padding-bottom: 10px;
             margin-bottom: 30px;
@@ -49,7 +49,7 @@
         hr {
             border: 0;
             height: 1px;
-            background-color: #FDE2DE; /* Lighter shade of coral */
+            background-color: #FDE2DE;
             margin: 50px 0;
         }
 
@@ -58,11 +58,10 @@
             padding-left: 20px;
         }
         
-        /* --- Custom Link Color --- */
         .link-dark {
-            color: #4A4A4A; /* Dark charcoal color */
+            color: #4A4A4A;
         }
-         .link-dark:hover {
+        .link-dark:hover {
             color: #F06253;
         }
 
@@ -76,7 +75,7 @@
             width: 254px;
             height: 254px;
             border-radius: 50%;
-            border: 5px solid #FDE2DE; /* Light coral border */
+            border: 5px solid #FDE2DE;
             margin-bottom: 20px;
             object-fit: cover;
         }
@@ -110,12 +109,11 @@
         }
 
         #skills h4 {
-            color: #333;
+            color: #333;         /* Bold black like project names */
             font-size: 1.2em;
-            font-weight: 600;    
+            font-weight: 600;
             margin-bottom: 10px;
         }
-
 
         /* --- Projects Section --- */
         .project-item {
@@ -140,7 +138,6 @@
             transform: scale(1.05);
         }
 
-        /* --- Project Link Button --- */
         .project-link-btn {
             display: inline-block;
             background-color: #F06253;
@@ -159,7 +156,38 @@
             color: #FFF;
         }
 
-        /* --- Journey (Timeline) Section --- */
+        /* --- Hover Preview Image for Project Titles --- */
+        .hover-preview {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .hover-preview .preview-image {
+            display: none;
+            position: absolute;
+            top: 120%;
+            left: 0;
+            z-index: 10;
+            background: #fff;
+            padding: 5px;
+            border: 2px solid #FDE2DE;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .hover-preview .preview-image img {
+            width: 220px;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .hover-preview:hover .preview-image {
+            display: block;
+        }
+
+        /* --- Journey Section --- */
         #journey > div {
             border-left: 3px solid #F06253;
             padding-left: 25px;
@@ -211,7 +239,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
     </style>
 </head>
 <body>
@@ -219,7 +246,6 @@
     <main>
         <!-- Hero Section -->
         <section id="home">
-            <!-- Add link to your profile photo image file here -->
             <a href="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/photo.jpg" target="_blank" rel="noopener noreferrer">
                 <img src="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/photo.jpg" alt="Mrunmay Mete" class="profile-photo">
             </a>
@@ -246,7 +272,6 @@ I am pursuing M. tech in Education Technology at IIT Bombay, I am passionate abo
         <hr class="fade-in-section">
 
         <!-- Skills Section -->
-        
         <section id="skills" class="fade-in-section">
             <h2>Core Skills</h2>
             <table width="100%">
@@ -318,35 +343,49 @@ I am pursuing M. tech in Education Technology at IIT Bombay, I am passionate abo
         <!-- Projects Section -->
         <section id="projects" class="fade-in-section">
             <h2>Featured Projects</h2>
+
+            <!-- Robotic Dog -->
             <div class="project-item">
                 <div class="project-description">
-                    <h3>Robotic Dog</h3>
+                    <h3 class="hover-preview">
+                        Robotic Dog
+                        <span class="preview-image">
+                            <img src="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/robotic_dog.jpg" alt="Robotic Dog">
+                        </span>
+                    </h3>
                     <p>A quadruped robot designed and built from scratch using Arduino and custom 3D-printed components during my internship.</p>
-                    <!-- Add link to your GitHub repository for this project here -->
                     <a href="https://github.com/MrunmayMete/Mini_Dhabba" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
                 </div>
             </div>
-             <div class="project-item">
+
+            <!-- Robotic Arm -->
+            <div class="project-item">
                 <div class="project-description">
-                    <h3>Robotic Arm</h3>
+                    <h3 class="hover-preview">
+                        Robotic Arm
+                        <span class="preview-image">
+                            <img src="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/robotic_arm.jpg" alt="Robotic Arm">
+                        </span>
+                    </h3>
                     <p>A functional robotic arm developed with Arduino for precise movements, featuring 3D-printed parts for a lightweight structure.</p>
-                    <!-- Add link to your GitHub repository for this project here -->
                     <a href="https://github.com/MrunmayMete/Robotic-Arm" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
                 </div>
             </div>
+
+            <!-- National Anthems Clustering -->
             <div class="project-item">
                 <div class="project-description">
                     <h3>National Anthems Clustering</h3>
                     <p>Utilized K-Means clustering with NLP and Word2Vec to group national anthems based on thematic and sentimental similarities.</p>
-                    <!-- Add link to your GitHub repository for this project here -->
                     <a href="https://github.com/MrunmayMete/anthem-clustering-using-NLP-and-K-Means-Clustring" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
                 </div>
             </div>
+
+            <!-- Morning Owls -->
             <div class="project-item">
                 <div class="project-description">
                     <h3>Morning_Owls - Personalized Micro-Learning Engine</h3>
                     <p>Welcome to Morning_Owls, a full-stack MVP web app for personalized micro-learning, designed for vocational and upskilling learners. This project is built with Next.js, Firebase, and Tailwind CSS, featuring a GenAI-powered recommendation engine.</p>
-                    <!-- Add link to your GitHub repository for this project here -->
                     <a href="https://morning-owls-up-grad.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link-btn">View</a>
                 </div>
             </div>
@@ -393,9 +432,7 @@ I am pursuing M. tech in Education Technology at IIT Bombay, I am passionate abo
         <!-- Publications Section -->
         <section id="publications" class="fade-in-section">
             <h2>Publications</h2>
-            <!-- Add link to your publication PDF or webpage here -->
             <p><a href="https://drive.google.com/file/d/1j1062_wMCdHm-T7hFXNhsoIN-Z_bDfx8/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="link-dark">GANs in Medical Imaging: Synthesizing Realistic Images for Analysis</a></p>
-
         </section>
 
     </main>
@@ -416,19 +453,17 @@ I am pursuing M. tech in Education Technology at IIT Bombay, I am passionate abo
         <p>&copy; 2025 Mrunmay Mete. All rights reserved.</p>
      </footer>
 
-
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // Stop observing once it's visible
+                        observer.unobserve(entry.target);
                     }
                 });
             }, {
-                threshold: 0.1 // Trigger when 10% of the element is visible
+                threshold: 0.1
             });
 
             const sections = document.querySelectorAll('.fade-in-section');
