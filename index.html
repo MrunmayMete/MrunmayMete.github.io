@@ -57,7 +57,8 @@
             list-style-type: disc;
             padding-left: 20px;
         }
-        
+
+        /* --- Custom Link Color --- */
         .link-dark {
             color: #4A4A4A;
         }
@@ -70,7 +71,7 @@
             text-align: center;
             padding: 80px 20px;
         }
-        
+
         .profile-photo {
             width: 254px;
             height: 254px;
@@ -103,13 +104,13 @@
             border-spacing: 0;
             margin-top: 20px;
         }
-        
+
         #skills td {
              padding: 0 15px 30px 0;
         }
 
         #skills h4 {
-            color: #333;         /* Bold black like project names */
+            color: #333; /* match other subtitles */
             font-size: 1.2em;
             font-weight: 600;
             margin-bottom: 10px;
@@ -133,11 +134,12 @@
             object-fit: cover;
             transition: transform 0.3s ease;
         }
-        
+
         .project-image img:hover {
             transform: scale(1.05);
         }
 
+        /* --- Project Link Button --- */
         .project-link-btn {
             display: inline-block;
             background-color: #F06253;
@@ -174,6 +176,9 @@
             border: 2px solid #FDE2DE;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
         .hover-preview .preview-image img {
@@ -185,16 +190,18 @@
 
         .hover-preview:hover .preview-image {
             display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* --- Journey Section --- */
+        /* --- Journey (Timeline) Section --- */
         #journey > div {
             border-left: 3px solid #F06253;
             padding-left: 25px;
             margin-bottom: 30px;
             position: relative;
         }
-        
+
         #journey > div::before {
             content: '';
             width: 12px;
@@ -227,7 +234,7 @@
             background-color: #d85447;
             text-decoration: none;
         }
-        
+
         /* --- Fade-in Animation on Scroll --- */
         .fade-in-section {
             opacity: 0;
@@ -266,7 +273,8 @@
         <section id="about" class="fade-in-section">
             <h2>About Me</h2>
             <p>
-I am pursuing M. tech in Education Technology at IIT Bombay, I am passionate about building intelligent systems that bridge the physical and digital worlds. My experience is rooted in hands-on creation, from designing and 3D-printing robotic dogs and arms to developing complex software solutions like a full-stack, GenAI-powered micro-learning platform. I am driven by the challenge of applying rigorous scientific research to create innovative tools and am always seeking opportunities to leverage my skills in AI and robotics to build impactful technologies.            </p>
+                I am pursuing M. tech in Education Technology at IIT Bombay, I am passionate about building intelligent systems that bridge the physical and digital worlds. My experience is rooted in hands-on creation, from designing and 3D-printing robotic dogs and arms to developing complex software solutions like a full-stack, GenAI-powered micro-learning platform. I am driven by the challenge of applying rigorous scientific research to create innovative tools and am always seeking opportunities to leverage my skills in AI and robotics to build impactful technologies.
+            </p>
         </section>
 
         <hr class="fade-in-section">
@@ -347,12 +355,12 @@ I am pursuing M. tech in Education Technology at IIT Bombay, I am passionate abo
             <!-- Robotic Dog -->
             <div class="project-item">
                 <div class="project-description">
-                    <h3 class="hover-preview">
-                        Robotic Dog
+                    <div class="hover-preview">
+                        <h3>Robotic Dog</h3>
                         <span class="preview-image">
                             <img src="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/robotic_dog.jpg" alt="Robotic Dog">
                         </span>
-                    </h3>
+                    </div>
                     <p>A quadruped robot designed and built from scratch using Arduino and custom 3D-printed components during my internship.</p>
                     <a href="https://github.com/MrunmayMete/Mini_Dhabba" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
                 </div>
@@ -361,18 +369,18 @@ I am pursuing M. tech in Education Technology at IIT Bombay, I am passionate abo
             <!-- Robotic Arm -->
             <div class="project-item">
                 <div class="project-description">
-                    <h3 class="hover-preview">
-                        Robotic Arm
+                    <div class="hover-preview">
+                        <h3>Robotic Arm</h3>
                         <span class="preview-image">
                             <img src="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/robotic_arm.jpg" alt="Robotic Arm">
                         </span>
-                    </h3>
+                    </div>
                     <p>A functional robotic arm developed with Arduino for precise movements, featuring 3D-printed parts for a lightweight structure.</p>
                     <a href="https://github.com/MrunmayMete/Robotic-Arm" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
                 </div>
             </div>
 
-            <!-- National Anthems Clustering -->
+            <!-- Anthem Clustering -->
             <div class="project-item">
                 <div class="project-description">
                     <h3>National Anthems Clustering</h3>
@@ -392,7 +400,7 @@ I am pursuing M. tech in Education Technology at IIT Bombay, I am passionate abo
         </section>
 
         <hr class="fade-in-section">
-        
+
         <!-- Journey Section -->
         <section id="journey" class="fade-in-section">
             <h2>My Journey</h2>
@@ -434,22 +442,17 @@ I am pursuing M. tech in Education Technology at IIT Bombay, I am passionate abo
             <h2>Publications</h2>
             <p><a href="https://drive.google.com/file/d/1j1062_wMCdHm-T7hFXNhsoIN-Z_bDfx8/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="link-dark">GANs in Medical Imaging: Synthesizing Realistic Images for Analysis</a></p>
         </section>
-
     </main>
     
     <footer id="contact" class="fade-in-section">
         <h2>Get In Touch</h2>
         <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of an innovative team, Feel free to reach out.</p>
         <a href="mailto:mrunmaymete@gmail.com" class="say-hello-btn">Say Hello</a>
-
         <br><br>
-
         <a href="mailto:mrunmaymete@gmail.com">Email</a> |
         <a href="https://linkedin.com/in/mrunmay-mete" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
         <a href="https://github.com/MrunmayMete" target="_blank" rel="noopener noreferrer">GitHub</a>
-
         <br><br>
-
         <p>&copy; 2025 Mrunmay Mete. All rights reserved.</p>
      </footer>
 
@@ -462,16 +465,11 @@ I am pursuing M. tech in Education Technology at IIT Bombay, I am passionate abo
                         observer.unobserve(entry.target);
                     }
                 });
-            }, {
-                threshold: 0.1
-            });
+            }, { threshold: 0.1 });
 
             const sections = document.querySelectorAll('.fade-in-section');
-            sections.forEach(section => {
-                observer.observe(section);
-            });
+            sections.forEach(section => observer.observe(section));
         });
     </script>
-
 </body>
 </html>
