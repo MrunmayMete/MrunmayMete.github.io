@@ -69,7 +69,7 @@
         /* --- Hero Section --- */
         #home {
             text-align: center;
-            padding: 80px 20px;
+            padding: 80px 20px 40px;
         }
 
         .profile-photo {
@@ -90,13 +90,7 @@
         #home p {
             font-size: 1.2em;
             color: #666;
-            margin-bottom: 30px;
-        }
-
-        #home nav a {
-            margin: 0 15px;
-            font-size: 1.1em;
-            font-weight: 600;
+            margin-bottom: 0;
         }
 
         /* --- Skills Section --- */
@@ -110,7 +104,7 @@
         }
 
         #skills h4 {
-            color: #333; /* match other subtitles */
+            color: #333;
             font-size: 1.2em;
             font-weight: 600;
             margin-bottom: 10px;
@@ -118,7 +112,7 @@
 
         /* --- Projects Section --- */
         .project-item {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .project-description {
@@ -246,212 +240,454 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* --- Top Bar & Page Buttons --- */
+        .top-bar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #FFF7EF;
+            border-bottom: 1px solid #FDE2DE;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 32px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.1em;
+            letter-spacing: 0.5px;
+            color: #333;
+        }
+
+        .top-nav {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .top-nav a {
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #4A4A4A;
+            border: 1px solid transparent;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        .top-nav a:hover {
+            background-color: #FDE2DE;
+            color: #F06253;
+            text-decoration: none;
+        }
+
+        /* Make tool project links black */
+        .tool-tile a {
+            color: #000;
+        }
+        .tool-tile a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        /* Tools Lab reflection card */
+        .tools-reflection-card {
+            background:#FFFFFF;
+            border-radius:18px;
+            padding:20px 22px;
+            border:1px solid #FDE2DE;
+            box-shadow:0 4px 10px rgba(0,0,0,0.04);
+            margin-top:18px;
+        }
+
+        .tools-reflection-card h3 {
+            margin-top:0;
+            margin-bottom:6px;
+        }
+
+        .tools-reflection-card p {
+            margin-top:4px;
+            margin-bottom:10px;
+        }
+
+        .tools-meta {
+            display:flex;
+            flex-wrap:wrap;
+            gap:24px;
+            margin-top:14px;
+            padding:12px 14px;
+            background:#FFF7EF;
+            border-radius:14px;
+        }
+
+        .tools-meta h4 {
+            margin:0 0 6px 0;
+            font-size:0.9em;
+            letter-spacing:0.04em;
+            text-transform:uppercase;
+            color:#777;
+        }
+
+        .tools-meta ul {
+            margin:0;
+            padding-left:18px;
+            font-size:0.9em;
+        }
+
+        .tools-pills {
+            display:flex;
+            flex-wrap:wrap;
+            gap:8px;
+        }
+
+        .tools-pill {
+            display:inline-block;
+            padding:4px 10px;
+            border-radius:999px;
+            background:#FFFFFF;
+            border:1px solid #E3D7CF;
+            font-size:0.8em;
+            white-space:nowrap;
+        }
+
+        .top-nav a.active {
+            background-color: #F06253;
+            color: #FFFFFF;
+            border-color: #F06253;
+        }
+
+        @media (max-width: 700px) {
+            .top-bar {
+                padding: 10px 16px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .top-nav {
+                width: 100%;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+        }
     </style>
 </head>
 <body>
 
+    <header class="top-bar">
+        <div class="logo">Mrunmay Mete</div>
+        <nav class="top-nav">
+            <a style="color:#000;" href="#" data-page="page-about" class="active">About</a>
+            <a href="#" data-page="page-projects">Projects</a>
+            <a href="#" data-page="page-skills">Skills &amp; Tools</a>
+            <a href="#" data-page="page-contact">Contact</a>
+        </nav>
+    </header>
+
     <main>
-        <!-- Hero Section -->
-        <section id="home">
-            <a href="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/photo.jpg" target="_blank" rel="noopener noreferrer">
-                <img src="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/photo.jpg" alt="Mrunmay Mete" class="profile-photo">
-            </a>
-            <h1>Mrunmay Mete</h1>
-            <p>Passionate about robotics and scientific research through machine learning.</p>
-            <nav>
-                <a href="#about">About</a> |
-                <a href="#skills">Skills</a> |
-                <a href="#projects">Projects</a> |
-                <a href="#journey">Journey</a> |
-                <a href="#contact">Contact</a> |
+        <!-- Page 1: About + Journey + Publications -->
+        <section id="page-about" class="page-section">
+            <!-- Hero Section -->
+            <section id="home">
+                <a href="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/photo.jpg" target="_blank" rel="noopener noreferrer">
+                    
+                </a>
+                <h1>Mrunmay Mete</h1>
+                <p>Passionate about robotics and scientific research through machine learning.</p>
+            
+
+
+</section>
+
+            <!-- About Section -->
+            <section id="about" class="fade-in-section">
+                <h2>About Me</h2>
+                <p>
+                    I am pursuing M. tech in Education Technology at IIT Bombay, I am passionate about building intelligent systems that bridge the physical and digital worlds. My experience is rooted in hands-on creation, from designing and 3D-printing robotic dogs and arms to developing complex software solutions like a full-stack, GenAI-powered micro-learning platform. I am driven by the challenge of applying rigorous scientific research to create innovative tools and am always seeking opportunities to leverage my skills in AI and robotics to build impactful technologies.
+                </p>
+            </section>
+
+            <hr class="fade-in-section">
+
+            <!-- Journey Section -->
+            <section id="journey" class="fade-in-section">
+                <h2>My Journey</h2>
+                <div>
+                    <p><b>2025 - 2027</b></p>
+                    <h3>M.Tech in Education Technology</h3>
+                    <p><i>Centre for Educational Technology, IIT Bombay</i></p>
+                    <p>Exploring the intersection of technology and learning methodologies to create innovative educational tools.</p>
+                </div>
+                <div>
+                    <p><b>June 2023 - Dec 2023</b></p>
+                    <h3>Robotics and AI Intern</h3>
+                    <p><i>IndiaFIRST ROBOTICS, Pune</i></p>
+                    <p>Gained hands-on experience in robotics hardware and AI integration, from design to execution and educational outreach.</p>
+                    <ul>
+                        <li>Designed Robotic Dog and Arm using Arduino and 3D-printed parts.</li>
+                        <li>Planned AI integration strategies for a Humanoid Robot.</li>
+                        <li>Contributed to prototypes and delivered engaging STEM robotics workshops.</li>
+                    </ul>
+                </div>
+                <div>
+                    <p><b>2021 - 2024</b></p>
+                    <h3>B.Tech in Artificial Intelligence</h3>
+                    <p><i>G H Raisoni Institute of Engineering and Technology, Nagpur (CGPA: 7.6)</i></p>
+                    <p>Built a strong foundation in core AI concepts, machine learning algorithms, and practical software development.</p>
+                </div>
+            </section>
+
+            <hr class="fade-in-section">
+
+            <!-- Publications Section -->
+            <section id="publications" class="fade-in-section">
+                <h2>Publications</h2>
+                <p><a href="https://drive.google.com/file/d/1j1062_wMCdHm-T7hFXNhsoIN-Z_bDfx8/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="link-dark">GANs in Medical Imaging: Synthesizing Realistic Images for Analysis</a></p>
+            
+
+</section>
+</section>
+
+        <!-- Page 2: Projects Only -->
+        <section id="page-projects" class="page-section" style="display:none;">
+            <section class="fade-in-section">
+                <h2>Projects</h2>
+
+                <div class="project-grid" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:22px; margin-top:25px;">
+
+                    <!-- Robotic Dog -->
+                    <div class="project-tile" style="background:#fff; border:2px solid #FDE2DE; border-radius:14px; padding:18px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+                        <h3 style="margin-top:0;">Robotic Dog</h3>
+                        <p style="font-size:0.9em;">A quadruped robot designed and built from scratch using Arduino and 3D-printed components during my internship.</p>
+                        <div class="tools-pills" style="margin-top:8px; display:flex; flex-wrap:wrap; gap:6px;">
+                            <span class="tools-pill">Arduino</span>
+                            <span class="tools-pill">3D Printing</span>
+                            <span class="tools-pill">Robotics</span>
+                        </div>
+                        <a href="https://github.com/MrunmayMete/Mini_Dhabba" target="_blank" class="project-link-btn">View Code</a>
+                    </div>
+
+                    <!-- Robotic Arm -->
+                    <div class="project-tile" style="background:#fff; border:2px solid #FDE2DE; border-radius:14px; padding:18px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+                        <h3 style="margin-top:0;">Robotic Arm</h3>
+                        <p style="font-size:0.9em;">A functional robotic arm developed with Arduino, featuring precise movements and 3D‑printed lightweight components.</p>
+                        <div class="tools-pills" style="margin-top:8px; display:flex; flex-wrap:wrap; gap:6px;">
+                            <span class="tools-pill">Arduino</span>
+                            <span class="tools-pill">3D Printing</span>
+                            <span class="tools-pill">Robotics</span>
+                        </div>
+                        <a href="https://github.com/MrunmayMete/Robotic-Arm" target="_blank" class="project-link-btn">View Code</a>
+                    </div>
+
+                    <!-- National Anthems Clustering -->
+                    <div class="project-tile" style="background:#fff; border:2px solid #FDE2DE; border-radius:14px; padding:18px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+                        <h3 style="margin-top:0;">National Anthems Clustering</h3>
+                        <p style="font-size:0.9em;">Applied NLP and K‑Means with Word2Vec embeddings to group national anthems by meaning and sentiment.</p>
+                        <div class="tools-pills" style="margin-top:8px; display:flex; flex-wrap:wrap; gap:6px;">
+                            <span class="tools-pill">Python</span>
+                            <span class="tools-pill">NLP</span>
+                            <span class="tools-pill">Word2Vec</span>
+                            <span class="tools-pill">K‑Means</span>
+                        </div>
+                        <a href="https://github.com/MrunmayMete/anthem-clustering-using-NLP-and-K-Means-Clustring" target="_blank" class="project-link-btn">View Code</a>
+                    </div>
+
+                    <!-- Morning Owls -->
+                    <div class="project-tile" style="background:#fff; border:2px solid #FDE2DE; border-radius:14px; padding:18px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+                        <h3 style="margin-top:0;">Morning_Owls – Micro-learning Platform</h3>
+                        <p style="font-size:0.9em;">A personalized micro‑learning platform for vocational and upskilling learners with a GenAI‑powered recommendation engine.</p>
+                        <div class="tools-pills" style="margin-top:8px; display:flex; flex-wrap:wrap; gap:6px;">
+                            <span class="tools-pill">Gemini</span>
+                            <span class="tools-pill">Next.js</span>
+                            <span class="tools-pill">Firebase</span>
+                            <span class="tools-pill">Tailwind CSS</span>
+                            <span class="tools-pill">Vercel</span>
+                        </div>
+                        <a href="https://morning-owls-up-grad.vercel.app/" target="_blank" class="project-link-btn">View App</a>
+                    </div>
+
+                    <!-- AlgoTouch -->
+                    <div class="project-tile" style="background:#fff; border:2px solid #FDE2DE; border-radius:14px; padding:18px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+                        <h3 style="margin-top:0;">AlgoTouch – Algorithm Learning Tool</h3>
+                        <p style="font-size:0.9em;">An interactive web app built for the Introduction to Educational Technology course to help learners explore algorithms step‑by‑step.</p>
+                        <div class="tools-pills" style="margin-top:8px; display:flex; flex-wrap:wrap; gap:6px;">
+                            <span class="tools-pill">Firebase</span>
+                            <span class="tools-pill">GitHub</span>
+                            <span class="tools-pill">ChatGPT</span>
+                        </div>
+                        <a href="https://mrunmaymete.github.io/ET_PROJECT/" target="_blank" class="project-link-btn">View Project</a>
+                    </div>
+
+                    <!-- ML Algorithms Interactive Simulator -->
+                    <div class="project-tile" style="background:#fff; border:2px solid #FDE2DE; border-radius:14px; padding:18px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+                        <h3 style="margin-top:0;">Machine Learning Algorithms – Interactive Simulator</h3>
+                        <p style="font-size:0.9em;">An interactive simulator that helps learners experiment with different machine learning algorithms and visualise their behaviour.</p>
+                        <div class="tools-pills" style="margin-top:8px; display:flex; flex-wrap:wrap; gap:6px;">
+                            <span class="tools-pill">GitHub</span>
+                            <span class="tools-pill">ChatGPT</span>
+                            <span class="tools-pill">JavaScript</span>
+                        </div>
+                        <a href="https://mrunmaymete.github.io/ML_simulator/" target="_blank" class="project-link-btn">View Simulator</a>
+                    </div>
+
+                    <!-- Statistics Simulator -->
+                    <div class="project-tile" style="background:#fff; border:2px solid #FDE2DE; border-radius:14px; padding:18px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+                        <h3 style="margin-top:0;">Statistics Simulator</h3>
+                        <p style="font-size:0.9em;">A web‑based simulator that demonstrates core statistics concepts through interactive visualisations.</p>
+                        <div class="tools-pills" style="margin-top:8px; display:flex; flex-wrap:wrap; gap:6px;">
+                            <span class="tools-pill">GitHub</span>
+                            <span class="tools-pill">ChatGPT</span>
+                            <span class="tools-pill">JavaScript</span>
+                        </div>
+                        <a href="https://mrunmaymete.github.io/statistics_simulator/" target="_blank" class="project-link-btn">View Simulator</a>
+                    </div>
+
+                    <!-- Algorithm Visualisations (Figma) -->
+                    <div class="project-tile" style="background:#fff; border:2px solid #FDE2DE; border-radius:14px; padding:18px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+                        <h3 style="margin-top:0;">Algorithm Visualisations (Figma)</h3>
+                        <p style="font-size:0.9em;">A set of interactive Figma prototypes to help learners understand core algorithmic ideas through visual storytelling.</p>
+                        <div class="tools-pills" style="margin-top:8px; display:flex; flex-wrap:wrap; gap:6px;">
+                            <span class="tools-pill">Figma</span>
+                            <span class="tools-pill">Figma AI</span>
+                        </div>
+                        <p style="font-size:0.85em; margin-top:10px;">
+                            <a href="https://crater-land-30107761.figma.site" target="_blank" rel="noopener noreferrer">Teacher Learning Analytics Dashboard</a><br>
+                            <a href="https://cling-pose-47604544.figma.site" target="_blank" rel="noopener noreferrer">Linear vs Binary Search Visualizer</a><br>
+                            <a href="https://corner-check-49119280.figma.site" target="_blank" rel="noopener noreferrer">Merge Sort Learning Simulation</a><br>
+                            <a href="https://system-warm-10111700.figma.site" target="_blank" rel="noopener noreferrer">Bubble Sort Simulation</a>
+                        </p>
+                    </div>
+
+                    <!-- Ecovidya -->
+                    <div class="project-tile" style="background:#fff; border:2px solid #FDE2DE; border-radius:14px; padding:18px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+                        <h3 style="margin-top:0;">Ecovidya – Environmental Learning Experience</h3>
+                        <p style="font-size:0.9em;">A web experience that uses GenAI‑assisted content and modern web deployment to support environmental education.</p>
+                        <div class="tools-pills" style="margin-top:8px; display:flex; flex-wrap:wrap; gap:6px;">
+                            <span class="tools-pill">Gemini</span>
+                            <span class="tools-pill">Vercel</span>
+                        </div>
+                        <a href="https://studio-1-flax.vercel.app/" target="_blank" class="project-link-btn">View App</a>
+                    </div>
+
+                    <!-- Concept Mapping & Mind Mapping -->
+                    <div class="project-tile" style="background:#fff; border:2px solid #FDE2DE; border-radius:14px; padding:18px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+                        <h3 style="margin-top:0;">Concept Mapping &amp; Mind Mapping</h3>
+                        <p style="font-size:0.9em;">Created concept maps and mind maps to structure ideas in education technology, research questions, and system designs.</p>
+                        <div class="tools-pills" style="margin-top:8px; display:flex; flex-wrap:wrap; gap:6px;">
+                            <span class="tools-pill">Miro</span>
+                            <span class="tools-pill">Figma / FigJam</span>
+                            <span class="tools-pill">Draw.io</span>
+                            <span class="tools-pill">NotebookLM</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </section>
+
+        <!-- Page 3: Skills + Tools -->
+        <section id="page-skills" class="page-section" style="display:none;">
+            <section id="skills" class="fade-in-section">
+                <h2>Skills &amp; Tools</h2>
+                <table width="100%">
+                    <tr>
+                        <td valign="top" width="33%">
+                            <h4>Programming Languages</h4>
+                            <ul>
+                                <li>Python</li>
+                                <li>R</li>
+                            </ul>
+
+                            <h4>Databases</h4>
+                            <ul>
+                                <li>SQL</li>
+                            </ul>
+                            
+                            <h4>Artificial Intelligence &amp; Machine Learning</h4>
+                            <ul>
+                                <li>PyTorch</li>
+                                <li>GANs</li>
+                                <li>NLP</li>
+                            </ul>
+                        </td>
+                        <td valign="top" width="33%">
+                            <h4>Data Analytics &amp; Visualization</h4>
+                            <ul>
+                                <li>Tableau</li>
+                                
+                            </ul>
+                            
+                            <h4>Cloud &amp; DevOps</h4>
+                            <ul>
+                                <li>Vercel</li>
+                                <li>GitHub</li>
+                            </ul>
+                            
+                            <h4>Hardware &amp; Robotics</h4>
+                            <ul>
+                                <li>Arduino</li>
+                                <li>3D Printing</li>
+                                <li>Pictoblox</li>
+                                <li>Prototyping</li>
+                            </ul>
+                        </td>
+                        <td valign="top" width="33%">
+                            <h4>Development Tools</h4>
+                            <ul>
+                                <li>VS Code</li>
+                                <li>RStudio</li>
+                                <li>Google Colab</li>
+                            </ul>
+
+                            <h4>Design &amp; Media Tools</h4>
+                            <ul>
+                                <li>Draw.io</li>
+                                <li>Clipchamp</li>
+                                <li>OBS Studio</li>
+                                <li>Figma</li>
+                                <li>Miro</li>
+                                <li>VEO3</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+
+<h3>Research Tools</h3>
+<ul>
+<li>Scopus</li>
+<li>Web of Science</li>
+<li>Lens</li>
+<li>Lens.org</li>
+<li>Scispace</li>
+<li>Unpaywall</li>
+<li>Norvix</li>
+</ul>
+            </section>
+        </section>
+
+                <!-- Page 5: Contact + Socials -->
+        <section id="page-contact" class="page-section" style="display:none;">
+            <section id="contact" class="fade-in-section">
+                <h2>Get In Touch</h2>
+                <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of an innovative team. Feel free to reach out.</p>
+                <a href="mailto:mrunmaymete@gmail.com" class="say-hello-btn">Say Hello</a>
+                <br><br>
+                <a href="mailto:mrunmaymete@gmail.com">Email</a> |
                 <a href="https://linkedin.com/in/mrunmay-mete" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
                 <a href="https://github.com/MrunmayMete" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </nav>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="fade-in-section">
-            <h2>About Me</h2>
-            <p>
-                I am pursuing M. tech in Education Technology at IIT Bombay, I am passionate about building intelligent systems that bridge the physical and digital worlds. My experience is rooted in hands-on creation, from designing and 3D-printing robotic dogs and arms to developing complex software solutions like a full-stack, GenAI-powered micro-learning platform. I am driven by the challenge of applying rigorous scientific research to create innovative tools and am always seeking opportunities to leverage my skills in AI and robotics to build impactful technologies.
-            </p>
-        </section>
-
-        <hr class="fade-in-section">
-
-        <!-- Skills Section -->
-        <section id="skills" class="fade-in-section">
-            <h2>Core Skills</h2>
-            <table width="100%">
-                <tr>
-                    <td valign="top" width="33%">
-                        <h4>Programming Languages</h4>
-                        <ul>
-                            <li>Python</li>
-                            <li>R</li>
-                        </ul>
-
-                        <h4>Databases</h4>
-                        <ul>
-                            <li>SQL</li>
-                        </ul>
-                        
-                        <h4>Artificial Intelligence & Machine Learning</h4>
-                        <ul>
-                            <li>PyTorch</li>
-                            <li>GANs</li>
-                            <li>NLP</li>
-                        </ul>
-                    </td>
-                    <td valign="top" width="33%">
-                        <h4>Data Analytics & Visualization</h4>
-                        <ul>
-                            <li>Tableau</li>
-                            <li>Prompt Engineering</li>
-                        </ul>
-                        
-                        <h4>Cloud & DevOps</h4>
-                        <ul>
-                            <li>Vercel</li>
-                            <li>GitHub</li>
-                        </ul>
-                        
-                        <h4>Hardware & Robotics</h4>
-                        <ul>
-                            <li>Arduino</li>
-                            <li>3D Printing</li>
-                            <li>Pictoblox</li>
-                            <li>Prototyping</li>
-                        </ul>
-                    </td>
-                     <td valign="top" width="33%">
-                        <h4>Development Tools</h4>
-                        <ul>
-                            <li>VS Code</li>
-                            <li>RStudio</li>
-                            <li>Google Colab</li>
-                        </ul>
-
-                        <h4>Design Tools</h4>
-                        <ul>
-                            <li>Draw.io</li>
-                            <li>Clipchamp</li>
-                            <li>OBS Studio</li>
-                            <li>Figma</li>
-                            <li>Miro</li>
-                            <li>VEO3</li>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
-        </section>
-
-        <hr class="fade-in-section">
-
-        <!-- Projects Section -->
-        <section id="projects" class="fade-in-section">
-            <h2>Featured Projects</h2>
-
-            <!-- Robotic Dog -->
-            <div class="project-item">
-                <div class="project-description">
-                    <div class="hover-preview">
-                        <h3>Robotic Dog</h3>
-                        <span class="preview-image">
-                            <img src="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/robotic_dog.jpg" alt="Robotic Dog">
-                        </span>
-                    </div>
-                    <p>A quadruped robot designed and built from scratch using Arduino and custom 3D-printed components during my internship.</p>
-                    <a href="https://github.com/MrunmayMete/Mini_Dhabba" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
-                </div>
-            </div>
-
-            <!-- Robotic Arm -->
-            <div class="project-item">
-                <div class="project-description">
-                    <div class="hover-preview">
-                        <h3>Robotic Arm</h3>
-                        <span class="preview-image">
-                            <img src="https://raw.githubusercontent.com/MrunmayMete/MrunmayMete.github.io/main/robotic_arm.jpg" alt="Robotic Arm">
-                        </span>
-                    </div>
-                    <p>A functional robotic arm developed with Arduino for precise movements, featuring 3D-printed parts for a lightweight structure.</p>
-                    <a href="https://github.com/MrunmayMete/Robotic-Arm" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
-                </div>
-            </div>
-
-            <!-- Anthem Clustering -->
-            <div class="project-item">
-                <div class="project-description">
-                    <h3>National Anthems Clustering</h3>
-                    <p>Utilized K-Means clustering with NLP and Word2Vec to group national anthems based on thematic and sentimental similarities.</p>
-                    <a href="https://github.com/MrunmayMete/anthem-clustering-using-NLP-and-K-Means-Clustring" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Code</a>
-                </div>
-            </div>
-
-            <!-- Morning Owls -->
-            <div class="project-item">
-                <div class="project-description">
-                    <h3>Morning_Owls - Personalized Micro-Learning Engine</h3>
-                    <p>Welcome to Morning_Owls, a full-stack MVP web app for personalized micro-learning, designed for vocational and upskilling learners. This project is built with Next.js, Firebase, and Tailwind CSS, featuring a GenAI-powered recommendation engine.</p>
-                    <a href="https://morning-owls-up-grad.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link-btn">View</a>
-                </div>
-            </div>
-        </section>
-
-        <hr class="fade-in-section">
-
-        <!-- Journey Section -->
-        <section id="journey" class="fade-in-section">
-            <h2>My Journey</h2>
-            <div>
-                <p><b>2025 - 2027</b></p>
-                <h3>M.Tech in Education Technology</h3>
-                <p><i>Centre for Educational Technology, IIT Bombay</i></p>
-                <p>Exploring the intersection of technology and learning methodologies to create innovative educational tools.</p>
-            </div>
-            <div>
-                <p><b>June 2023 - Dec 2023</b></p>
-                <h3>Robotics and AI Intern</h3>
-                <p><i>IndiaFIRST ROBOTICS, Pune</i></p>
-                <p>Gained hands-on experience in robotics hardware and AI integration, from design to execution and educational outreach.</p>
-                <ul>
-                    <li>Designed Robotic Dog and Arm using Arduino and 3D-printed parts.</li>
-                    <li>Planned AI integration strategies for a Humanoid Robot.</li>
-                    <li>Contributed to prototypes and delivered engaging STEM robotics workshops.</li>
-                </ul>
-            </div>
-            <div>
-                <p><b>2021 - 2024</b></p>
-                <h3>B.Tech in Artificial Intelligence</h3>
-                <p><i>G H Raisoni Institute of Engineering and Technology, Nagpur (CGPA: 7.6)</i></p>
-                <p>Built a strong foundation in core AI concepts, machine learning algorithms, and practical software development.</p>
-            </div>
-        </section>
-
-        <hr class="fade-in-section">
-
-        <!-- Publications Section -->
-        <section id="publications" class="fade-in-section">
-            <h2>Publications</h2>
-            <p><a href="https://drive.google.com/file/d/1j1062_wMCdHm-T7hFXNhsoIN-Z_bDfx8/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="link-dark">GANs in Medical Imaging: Synthesizing Realistic Images for Analysis</a></p>
+                <br><br>
+                <p>&copy; 2025 Mrunmay Mete. All rights reserved.</p>
+            </section>
         </section>
     </main>
-    
-    <footer id="contact" class="fade-in-section">
-        <h2>Get In Touch</h2>
-        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of an innovative team, Feel free to reach out.</p>
-        <a href="mailto:mrunmaymete@gmail.com" class="say-hello-btn">Say Hello</a>
-        <br><br>
-        <a href="mailto:mrunmaymete@gmail.com">Email</a> |
-        <a href="https://linkedin.com/in/mrunmay-mete" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
-        <a href="https://github.com/MrunmayMete" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <br><br>
-        <p>&copy; 2025 Mrunmay Mete. All rights reserved.</p>
-     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Fade-in on scroll
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -461,8 +697,26 @@
                 });
             }, { threshold: 0.1 });
 
-            const sections = document.querySelectorAll('.fade-in-section');
-            sections.forEach(section => observer.observe(section));
+            const fadeSections = document.querySelectorAll('.fade-in-section');
+            fadeSections.forEach(section => observer.observe(section));
+
+            // Simple page switcher for top bar
+            const pageLinks = document.querySelectorAll('.top-nav a');
+            const pages = document.querySelectorAll('.page-section');
+
+            pageLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('data-page');
+
+                    pages.forEach(page => {
+                        page.style.display = (page.id === targetId) ? 'block' : 'none';
+                    });
+
+                    pageLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                });
+            });
         });
     </script>
 </body>
